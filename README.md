@@ -45,5 +45,8 @@ cd xiaofu-s-terminal
 cd ~/
 source ./.zshrc
 ```
+小泡芙波貓某天心血來潮造出來的廢物w
+
+
 
 ![](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxpVWde3u1TMCHRFjKHZf9PTe8dEqUipEmTA&s)
