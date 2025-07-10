@@ -45,3 +45,5 @@ cd xiaofu-s-terminal
 cd ~/
 source ./.zshrc
 ```
+
+![](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxpVWde3u1TMCHRFjKHZf9PTe8dEqUipEmTA&s)
