@@ -72,7 +72,7 @@ sleep 1
 
         echo "請刪除舊的小芙終端機內容並儲存..."
         echo -e "\033[31m⚠️請勿刪除小芙終端機以外內容，會出事⚠️\033[0m"
-        nano .zshrc
+        open -a TextEdit ./.zshrc
         echo "正在開始安裝..."
         cd xiaofu-s-terminal
         ./install.sh
