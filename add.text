@@ -25,7 +25,7 @@ sleep 1
     echo -e "\033[32m"
     slow_echo 0.1 "正在啟動小芙駭客程式"
     sleep 0.5
-    jp2a --width=80 /xiaofu-s-terminal/skull.jpg
+    jp2a --width=80 ./xiaofu-s-terminal/skull.jpg
     echo ">>>"
 }
 這裡寫什麼？() {
