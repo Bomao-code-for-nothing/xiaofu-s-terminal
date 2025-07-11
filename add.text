@@ -15,7 +15,7 @@ slow_echo() {
 
 slow_echo 0.01 "..."
 sleep 1
-slow_echo 0.05 "呀呀呀，波貓，今天想跟小芙一起在程式世界裡冒險嗎?"
+slow_echo 0.05 "呀呀呀，小泡芙們，今天想跟小芙一起在程式世界裡冒險嗎?"
 slow_echo 0.05 "好，小芙要啟動終端機啦！"
 slow_echo 0.05 "始めましょう！"
 sleep 1
