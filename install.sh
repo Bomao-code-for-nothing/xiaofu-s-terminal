@@ -12,3 +12,5 @@ read -r
 cat "$file" >> "$HOME/.zshrc"
 
 echo "你的小芙終端機已安裝成功"
+cd
+source .zshrc
