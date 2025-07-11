@@ -1,6 +1,5 @@
 
 #以下部分由小芙終端機新增，要刪除請刪除下方內容，上方內容不是由小芙終端機新增
-
 slow_echo() {
     echo -e "\033[38;5;218m"
     local delay=$1
@@ -41,6 +40,48 @@ sleep 1
         slow_echo 0.05 "下次不可以再讓小芙讀這麼長的文件了啦！"
     fi
 }
+小芙，檢查更新() {
+    slow_echo 0.05 "小芙來幫你偷偷看一下有沒有更新喔...!"
+
+    local_version_file="$HOME/.xiaofu-version"
+    github_api="https://api.github.com/repos/Bomao-code-for-nothing/xiaofu-s-terminal/commits/main"
+
+    if ! command -v curl >/dev/null; then
+        echo "需要 curl 指令，小芙找不到耶 QAQ"
+        return 1
+    fi
+
+    remote_commit=$(curl -s "$github_api" | grep '"sha":' | head -n 1 | cut -d '"' -f 4)
+
+    if [ ! -f "$local_version_file" ]; then
+        echo "（第一次檢查版本，小芙記錄一下喔！）"
+        echo "$remote_commit" > "$local_version_file"
+    fi
+
+    local_commit=$(cat "$local_version_file")
+
+    if [[ "$local_commit" != "$remote_commit" ]]; then
+        slow_echo 0.1 "哎呀呀，有更新耶！小芙要去 GitHub 給自己升級喔！"
+        echo "按下 Enter 確認升級..."
+        read -r
+        cd ~
+        rm -rf xiaofu-s-terminal
+        echo "正在下載..."
+        git clone https://github.com/Bomao-code-for-nothing/xiaofu-s-terminal.git
+        echo "$remote_commit" > "$local_version_file"
+
+        echo "請刪除舊的小芙終端機內容並儲存..."
+        echo -e "\033[31m⚠️請勿刪除小芙終端機以外內容，會出事⚠️\033[0m"
+        nano .zshrc
+        echo "正在開始安裝..."
+        cd xiaofu-s-terminal
+        ./install.sh
+    else
+        slow_echo 0.1 "現在是最新版本，小芙早就準備好啦～♪PREMADE PREMADE PREMADE"
+    fi
+}
+
+
 
 
 小芙，你可以幫我什麼？() {
@@ -48,6 +89,7 @@ sleep 1
     echo "小芙的指令有這些喔！"
     echo "小芙駭客程式 -- 這是小梅請小芙做給小泡芙們，她還說“你們這些爛泡芙應該都沒看過吧，好吧，這次就破例讓你們體驗看看吧！”"
     echo "這裡寫什麼？ -- 小芙會把文件讀出來喔！"
+    echo "小芙，檢查更新 -- 檢查小芙終端機的更新"
     if [[ -n "$IS_ALIAS" ]]; then
       echo "----------------------"
       echo "下次找小芙直接說「小芙，你可以幫我什麼？」就可以啦！"
