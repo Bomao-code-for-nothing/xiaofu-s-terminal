@@ -25,6 +25,9 @@
 這裡寫什麼？ /到/文件/的/路徑/文件.txt
 ```
    小芙會把指定文件讀出來喔！
+
+3. **啟動歡迎語**(非指令)
+![指令列表指令示範](./Resources/StartUp.gif)
    
 3. **小芙，檢查更新**
 ```bash
@@ -38,6 +41,7 @@
 ```
 顯示指令列表
 
+![指令列表指令示範](./Resources/Command.gif)
 
 
 ---
@@ -69,9 +73,3 @@ open ./
 右鍵，以任意文字編輯器打開，把小芙終端機的部分刪除
 ```
 方法2.**等待我推出解除安裝工具：D**
-
-（小泡芙波貓某天心血來潮造出來的廢物w）
-
-
-
-![](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxpVWde3u1TMCHRFjKHZf9PTe8dEqUipEmTA&s)
